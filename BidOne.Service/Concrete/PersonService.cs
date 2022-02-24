@@ -18,12 +18,19 @@ namespace BidOne.Service.Concrete
 
         public async Task Save(Person person)
         {
-            if(person.Id == null)
+            try
             {
-                person.Id = Guid.NewGuid();
-            }
+                if (person.Id == null)
+                {
+                    person.Id = Guid.NewGuid();
+                }
 
-            await _repo.Save(person);
+                await _repo.Save(person);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

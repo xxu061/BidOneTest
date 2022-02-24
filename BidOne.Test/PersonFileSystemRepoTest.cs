@@ -16,23 +16,23 @@ namespace BidOne.Test
             _config = new Mock<IConfiguration>();
         }
         [Fact]
-        public async Task ShouldThrowNullReferenceForEmptyPayload()
+        public async Task ShouldThrowArgumentNullForEmptyPayload()
         {
             PersonFileSystemRepo repo = new PersonFileSystemRepo(_config.Object);
 
             Func<Task> act = async () => await repo.Save(null);
 
-            await act.Should().ThrowAsync<NullReferenceException>();
+            await act.Should().ThrowAsync<ArgumentNullException>();
         }
 
         [Fact]
-        public async Task ShouldThrowNullReferenceForNullId()
+        public async Task ShouldThrowArgumentNullForNullId()
         {
             PersonFileSystemRepo repo = new PersonFileSystemRepo(_config.Object);
 
             Func<Task> act = async () => await repo.Save(new Domain.Person() { Id = null });
 
-            await act.Should().ThrowAsync<NullReferenceException>();
+            await act.Should().ThrowAsync<ArgumentNullException>("Invalid payload");
         }
 
         [Fact]

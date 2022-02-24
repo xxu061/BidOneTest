@@ -27,7 +27,7 @@ namespace BidOne.Repo.Concrete
                 }
                 else
                 {
-                    throw new NullReferenceException("Invalid payload");
+                    throw new ArgumentNullException("Invalid payload");
                 }
             }
             catch (Exception e)

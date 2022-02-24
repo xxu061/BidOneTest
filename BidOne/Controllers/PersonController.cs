@@ -39,6 +39,10 @@ namespace BidOne.Controllers
 
                 return Ok();
             }
+            catch(ArgumentNullException e)
+            {
+                return BadRequest();
+            }
             catch(Exception e)
             {
                 _logger.LogError(e, "Error occurred.");
