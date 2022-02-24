@@ -8,6 +8,9 @@ export interface AppState {
 export interface IPersonState{
     firstName: string;
     lastName: string;
+    error: string;
+    submitted: boolean;
+    success: string;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
@@ -16,6 +19,9 @@ export const reducers: ActionReducerMap<AppState> = {
 
 export const initialPersonState: IPersonState = {
     firstName: '',
-    lastName: ''
+    lastName: '',
+    error: '',
+    success: '',
+    submitted: false
 };
 

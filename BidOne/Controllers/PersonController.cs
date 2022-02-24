@@ -30,7 +30,7 @@ namespace BidOne.Controllers
         {
             try
             {
-                if(person == null)
+                if(person == null || string.IsNullOrEmpty(person.FirstName) || string.IsNullOrEmpty(person.LastName))
                 {
                     return BadRequest();
                 }

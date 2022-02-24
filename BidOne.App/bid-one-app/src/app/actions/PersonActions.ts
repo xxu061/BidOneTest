@@ -1,4 +1,4 @@
-import { createAction, props } from '@ngrx/store';
+import { createAction } from '@ngrx/store';
 import { Person } from '../models/Person';
 
 export const SAVEPERSON = createAction('[PERSON] saveperson', (payload: Person) => (payload));

@@ -10,6 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { PersonEffect } from './effects/personEffect';
 import { RouterModule } from '@angular/router';
 import { PersonService } from './services/personService';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PersonService } from './services/personService';
     HttpClientModule,
     RouterModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([PersonEffect])
+    EffectsModule.forRoot([PersonEffect]),
+    ToastrModule.forRoot()
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]
