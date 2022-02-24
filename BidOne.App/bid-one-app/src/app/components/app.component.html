@@ -1,0 +1,26 @@
+<div>
+  <form>
+    <div class="mb-3">
+      <label class="form-label">First Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(value)]="person.firstName"
+        (change)="firstNameOnChange($event)"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Last Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        [(value)]="person.lastName"
+        (change)="lastNameOnChange($event)"
+      />
+    </div>
+    <button class="btn btn-primary" type="button" (click)="save()">
+      Submit
+    </button>
+  </form>
+</div>
+<router-outlet></router-outlet>
